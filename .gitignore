@@ -3,6 +3,7 @@ Thumbs.db
 ehthumbs.db
 .settings
 bin
+.class
 
 # Folder config file
 Desktop.ini
