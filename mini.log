@@ -1,0 +1,346 @@
+   1: program gcd; 
+Parser:   <program>
+   2: /* a program to compute the {greatest common} of two numbers, 
+   3:    i.e., the biggest number by which the two original 
+   4:    numbers can be divided without a remainder. */ 
+   5:  
+   6: const v1 = 1071; v2 = 462; 
+Parser:     <block>
+Parser:       <constdeclpart>
+Parser:         <constdecl>
+Parser:           <constant>
+Parser:             <unsignedconstant>
+Parser:               <numericliteral>
+Parser:               </numericliteral>
+Parser:             </unsignedconstant>
+Parser:           </constant>
+Parser:         </consdecl>
+Parser:         <constdecl>
+Parser:           <constant>
+Parser:             <unsignedconstant>
+Parser:               <numericliteral>
+   7:  
+   8: var res: integer; 
+Parser:               </numericliteral>
+Parser:             </unsignedconstant>
+Parser:           </constant>
+Parser:         </consdecl>
+Parser:       </constdeclpart>
+Parser:       <vardeclpart>
+Parser:         <vardecl>
+Parser:           <type>
+Parser:             <typename>
+   9:  
+  10: function gcd (m: integer; n: integer): integer; 
+Parser:             </typename>
+Parser:           </type>
+Parser:         </vardecl>
+Parser:       </vardeclpart>
+Parser:       <funcdecl>
+Parser:         <paramdecllist>
+Parser:           <paramdecl>
+Parser:             <typename>
+Parser:             </typename>
+Parser:           </paramdecl>
+Parser:           <paramdecl>
+Parser:             <typename>
+Parser:             </typename>
+Parser:           </paramdecl>
+Parser:         </paramdecllist>
+Parser:         <typename>
+  11: begin 
+Parser:         </typename>
+  12:    if n = 0 then 
+Parser:         <block>
+Parser:           <statm-list>
+Parser:             <statement>
+Parser:               <if-statm>
+Parser:                 <expression>
+Parser:                   <simple-expr>
+Parser:                     <term>
+Parser:                       <factor>
+Parser:                         <variable>
+Parser:                         </variable>
+Parser:                       </factor>
+Parser:                     </term>
+Parser:                   </simple-expr>
+Parser:                   <relopr>
+Parser:                   </relopr>
+Parser:                   <simple-expr>
+Parser:                     <term>
+Parser:                       <factor>
+Parser:                         <unsignedconstant>
+Parser:                           <numericliteral>
+  13:       gcd := m 
+Parser:                           </numericliteral>
+Parser:                         </unsignedconstant>
+Parser:                       </factor>
+Parser:                     </term>
+Parser:                   </simple-expr>
+Parser:                 </expression>
+Parser:                 <statement>
+Parser:                   <assign-statm>
+Parser:                     <variable>
+Parser:                     </variable>
+  14:    else 
+Parser:                     <expression>
+Parser:                       <simple-expr>
+Parser:                         <term>
+Parser:                           <factor>
+Parser:                             <variable>
+  15:       gcd := gcd(n, m mod n) 
+Parser:                             </variable>
+Parser:                           </factor>
+Parser:                         </term>
+Parser:                       </simple-expr>
+Parser:                     </expression>
+Parser:                   </assign-statm>
+Parser:                 </statement>
+Parser:                 <statement>
+Parser:                   <assign-statm>
+Parser:                     <variable>
+Parser:                     </variable>
+Parser:                     <expression>
+Parser:                       <simple-expr>
+Parser:                         <term>
+Parser:                           <factor>
+Parser:                             <funccall>
+Parser:                               <expression>
+Parser:                                 <simple-expr>
+Parser:                                   <term>
+Parser:                                     <factor>
+Parser:                                       <variable>
+Parser:                                       </variable>
+Parser:                                     </factor>
+Parser:                                   </term>
+Parser:                                 </simple-expr>
+Parser:                               </expression>
+Parser:                               <expression>
+Parser:                                 <simple-expr>
+Parser:                                   <term>
+Parser:                                     <factor>
+Parser:                                       <variable>
+Parser:                                       </variable>
+Parser:                                     </factor>
+Parser:                                     <factoropr>
+Parser:                                     </factoropr>
+Parser:                                     <factor>
+Parser:                                       <variable>
+  16: end; { gcd } 
+Parser:                                       </variable>
+Parser:                                     </factor>
+Parser:                                   </term>
+Parser:                                 </simple-expr>
+Parser:                               </expression>
+Parser:                             </funccall>
+Parser:                           </factor>
+Parser:                         </term>
+Parser:                       </simple-expr>
+Parser:                     </expression>
+Parser:                   </assign-statm>
+Parser:                 </statement>
+Parser:               </statement>
+Parser:             </statm_list>
+  17:  
+  18: begin 
+Parser:           </block>
+  19:    res := gcd(v1,v2); 
+Parser:         </funcdecl>
+Parser:         <statm-list>
+Parser:           <statement>
+Parser:             <assign-statm>
+Parser:               <variable>
+Parser:               </variable>
+Parser:               <expression>
+Parser:                 <simple-expr>
+Parser:                   <term>
+Parser:                     <factor>
+Parser:                       <funccall>
+Parser:                         <expression>
+Parser:                           <simple-expr>
+Parser:                             <term>
+Parser:                               <factor>
+Parser:                                 <variable>
+Parser:                                 </variable>
+Parser:                               </factor>
+Parser:                             </term>
+Parser:                           </simple-expr>
+Parser:                         </expression>
+Parser:                         <expression>
+Parser:                           <simple-expr>
+Parser:                             <term>
+Parser:                               <factor>
+Parser:                                 <variable>
+Parser:                                 </variable>
+Parser:                               </factor>
+Parser:                             </term>
+Parser:                           </simple-expr>
+Parser:                         </expression>
+  20:    write('g', 'c', 'd', '(', v1, ',', v2, ')', '=', res, eol); 
+Parser:                       </funccall>
+Parser:                     </factor>
+Parser:                   </term>
+Parser:                 </simple-expr>
+Parser:               </expression>
+Parser:             </assign-statm>
+Parser:           </statement>
+Parser:           <statement>
+Parser:             <proccall-statm>
+Parser:               <expression>
+Parser:                 <simple-expr>
+Parser:                   <term>
+Parser:                     <factor>
+Parser:                       <unsignedconstant>
+Parser:                         <charliteral>
+Parser:                         </charliteral>
+Parser:                       </unsignedconstant>
+Parser:                     </factor>
+Parser:                   </term>
+Parser:                 </simple-expr>
+Parser:               </expression>
+Parser:               <expression>
+Parser:                 <simple-expr>
+Parser:                   <term>
+Parser:                     <factor>
+Parser:                       <unsignedconstant>
+Parser:                         <charliteral>
+Parser:                         </charliteral>
+Parser:                       </unsignedconstant>
+Parser:                     </factor>
+Parser:                   </term>
+Parser:                 </simple-expr>
+Parser:               </expression>
+Parser:               <expression>
+Parser:                 <simple-expr>
+Parser:                   <term>
+Parser:                     <factor>
+Parser:                       <unsignedconstant>
+Parser:                         <charliteral>
+Parser:                         </charliteral>
+Parser:                       </unsignedconstant>
+Parser:                     </factor>
+Parser:                   </term>
+Parser:                 </simple-expr>
+Parser:               </expression>
+Parser:               <expression>
+Parser:                 <simple-expr>
+Parser:                   <term>
+Parser:                     <factor>
+Parser:                       <unsignedconstant>
+Parser:                         <charliteral>
+Parser:                         </charliteral>
+Parser:                       </unsignedconstant>
+Parser:                     </factor>
+Parser:                   </term>
+Parser:                 </simple-expr>
+Parser:               </expression>
+Parser:               <expression>
+Parser:                 <simple-expr>
+Parser:                   <term>
+Parser:                     <factor>
+Parser:                       <variable>
+Parser:                       </variable>
+Parser:                     </factor>
+Parser:                   </term>
+Parser:                 </simple-expr>
+Parser:               </expression>
+Parser:               <expression>
+Parser:                 <simple-expr>
+Parser:                   <term>
+Parser:                     <factor>
+Parser:                       <unsignedconstant>
+Parser:                         <charliteral>
+Parser:                         </charliteral>
+Parser:                       </unsignedconstant>
+Parser:                     </factor>
+Parser:                   </term>
+Parser:                 </simple-expr>
+Parser:               </expression>
+Parser:               <expression>
+Parser:                 <simple-expr>
+Parser:                   <term>
+Parser:                     <factor>
+Parser:                       <variable>
+Parser:                       </variable>
+Parser:                     </factor>
+Parser:                   </term>
+Parser:                 </simple-expr>
+Parser:               </expression>
+Parser:               <expression>
+Parser:                 <simple-expr>
+Parser:                   <term>
+Parser:                     <factor>
+Parser:                       <unsignedconstant>
+Parser:                         <charliteral>
+Parser:                         </charliteral>
+Parser:                       </unsignedconstant>
+Parser:                     </factor>
+Parser:                   </term>
+Parser:                 </simple-expr>
+Parser:               </expression>
+Parser:               <expression>
+Parser:                 <simple-expr>
+Parser:                   <term>
+Parser:                     <factor>
+Parser:                       <unsignedconstant>
+Parser:                         <charliteral>
+Parser:                         </charliteral>
+Parser:                       </unsignedconstant>
+Parser:                     </factor>
+Parser:                   </term>
+Parser:                 </simple-expr>
+Parser:               </expression>
+Parser:               <expression>
+Parser:                 <simple-expr>
+Parser:                   <term>
+Parser:                     <factor>
+Parser:                       <variable>
+Parser:                       </variable>
+Parser:                     </factor>
+Parser:                   </term>
+Parser:                 </simple-expr>
+Parser:               </expression>
+Parser:               <expression>
+Parser:                 <simple-expr>
+Parser:                   <term>
+Parser:                     <factor>
+Parser:                       <variable>
+Parser:                       </variable>
+Parser:                     </factor>
+Parser:                   </term>
+Parser:                 </simple-expr>
+Parser:               </expression>
+  21: end. 
+Parser:             </proccall-statm>
+Parser:           </statement>
+Parser:           <statement>
+Parser:             <empty-stmt>
+Parser:             </empty-stmt>
+Parser:           </statement>
+Parser:         </statm_list>
+Parser:       </block>
+Parser:     </program>
+program gcd;
+const
+  v1 = 1071;
+  v2 = 462;
+
+var 
+  res: integer;
+
+function gcd (m: integer; n: integer): integer;
+begin 
+  if  n=0 then
+   gcd :=  m;
+   else 
+   gcd := gcd( n, m mod n)
+  ;
+
+end;
+begin 
+   res := gcd( v1, v2)
+  ;
+
+    write('g','c','d','(', v1,',', v2,')','=', res);
+
+end.
